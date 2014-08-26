@@ -1,0 +1,112 @@
+<html>
+    <head>
+    	
+<link href="style/layout.css" rel="stylesheet" type="text/css" />
+
+
+
+        <script type="text/javascript" src="js/jq.mobi.js"></script>     
+
+
+
+<script type="text/javascript" src="js/wm.js"></script>
+
+
+
+<script type="text/javascript" charset="utf-8" src="js/pyRun.js"></script>
+
+
+
+
+        <style type="text/css">
+        .accel
+        {
+            width:10px;
+            height:30px;
+            background-color:red;
+        }
+
+        
+    </style>
+
+<script>
+$(document).ready(function () {
+$("#pass").on('keyup', function(event) {
+    if(event.keyCode == 13){
+        alert('y');
+        /*$("#submit").click();*/
+    }
+});
+});
+</script>
+</head>
+<body  onLoad="init();">
+
+
+<script type="text/javascript">
+
+/*function createKeyFile(){
+
+var passkey=document.getElementById("pass").value;
+sessionStorage.p = passkey;
+alert("mk key"+passkey);
+var dbName=document.getElementById("dbName").value;
+var pycom="import log\nimport sys\nsys.path = ['/pythonHome/Lib/site-packadges','/pythonHome/Lib','/pythonHome/system','/pythonHome','.']\nfrom keygenHandle import *\nwriteKeyFile('"+passkey+"')\nop='constructing key'\nlog.CaptureStdout(op)\n";
+
+
+navigator.pyRun.PyCommand(pycom,onDataOut,onError);
+
+
+
+}*/
+
+
+
+function createDB(){
+var passkey=document.getElementById("pass").value;
+sessionStorage.p = passkey;
+
+
+
+var dbName=document.getElementById("dbName").value;
+var pycom="import log\nimport sys\nsys.path = ['/pythonHome/Lib','/pythonHome','.']\nfrom appLogicDef import *\ncreatenewdatabase('"+passkey+"','"+dbName+"')\n";
+
+navigator.pyRun.PyCommand(pycom,onDataOut,onError);
+
+
+
+}
+function onError() {
+      alert("error");
+}
+
+function onDataOut(text) {
+
+location.href = 'wizard-2.html';
+//will be second wizard section after
+
+}
+
+
+</script>
+
+<div class="center">
+<br>
+<a>Enter database name</a>
+<input type='textbox' id='dbName' ></input>
+<br>
+<br>
+<a>Enter password</a>
+<input id="pass" type="password" name="password" ></input>
+<br>
+<br>  
+<br class="clearFloat" />
+<div id="loading" style="display:none;"><img src="style/images/ajax-loader.gif" alt="" /></div>
+<input id="submit" type="button" value="Import Secure Database" onclick="location.href = 'wizard-import.html';" ></input>
+<input id="submit" type="button" value="Create Secure Database" onclick="createDB();" ></input>
+<br>
+
+      
+</div>
+</body>
+</html>

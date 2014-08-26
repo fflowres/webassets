@@ -1,0 +1,132 @@
+<html>
+    <head>
+    	
+
+<script type="text/javascript" src="js/wm.js"></script>
+<link href="style/layout.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" charset="utf-8" src="js/pyRun.js"></script>
+        <script type="text/javascript" src="js/jq.mobi.min.js"></script>  
+
+<style type="text/css">
+.resizedTextbox {
+font-size: 5em;
+height: 2em;
+width: 6em;
+ }
+
+</style>
+
+
+
+<script>
+
+
+
+
+
+$("#pass").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#submit").click();
+    }
+});
+</script>
+</head>
+
+
+<body>
+
+
+<script type="text/javascript">
+
+
+
+function checkPassword(){
+    $("#submit").css({ display: "none" });
+    $("#loading").css({ display: "block" });
+var passkey=document.getElementById("pass").value;
+
+var pycom="import log\nimport sys\nsys.path = ['/pythonHome/Lib/site-packadges','/pythonHome/Lib','/pythonHome/system','/pythonHome','.']\nfrom dbHandle import *\npasswordCheck('"+passkey+"','True')\n";
+
+
+ //send data to iterate input boxes
+navigator.pyRun.PyCommand(pycom,passwordStatus,onError);
+
+
+}
+
+
+function onError() {
+
+      alert("error");
+      }
+
+
+function passwordStatus(text){
+
+
+if(text=="True"){
+
+	var pass = document.getElementById("pass").value;
+	sessionStorage.p = pass;
+
+		if(sessionStorage.p == pass){
+      sessionStorage.topage = 'graph.html';
+			location.href = 'index_p.html';
+      
+			}else{
+			alert("password session issue");
+
+
+			}
+
+}else{
+    $("#submit").css({ display: "block" });
+    $("#loading").css({ display: "none" });
+	alert("Wrong password");
+	}
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<div  id="wrapper" >
+
+  <div id="topArea" class="center">
+
+  		<div id="midForm" >
+
+
+<a>Enter password</a>
+<input id="pass" type="password" name="password" class="resizedTextbox"/>
+  
+       
+<div id="loading" style="display:none;"><img src="style/images/ajax-loader.gif" alt="" /></div>
+        	 <input id="submit" type="button" value="Enter" onclick="checkPassword();" />
+
+        </div>
+</div>
+
+ 
+</div>
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

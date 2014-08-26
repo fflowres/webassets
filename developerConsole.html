@@ -1,0 +1,149 @@
+
+<html>
+    <head>
+      
+        <link href="./style/layout.css" rel="stylesheet" type="text/css" />
+
+
+
+        <script type="text/javascript" src="./js/jq.mobi.js"></script>     
+
+
+
+        <script type="text/javascript" src="./js/wm.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="./js/pyRun.js"></script>
+
+
+    <style type="text/css">
+        .accel
+        {
+            width:10px;
+            height:30px;
+            background-color:red;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+
+/*function checkLibs(){
+var pycom="import log\nimport sys\nimport socket\nsys.path = ['/testFunc/','.']\nfrom moduleTest import *\nlog.CaptureStdout(availableModules())\n";
+navigator.pyRun.PyCommand(pycom,onDataOut,onError);
+}
+
+
+function fullLoad(){
+var pycom="import log\nimport sys\nimport socket\nsys.path = ['/testFunc/','.']\nfrom moduleTest import *\nlog.CaptureStdout(testall())\n";
+navigator.pyRun.PyCommand(pycom,onDataOut,onError);
+}
+
+
+function socket1(){
+var pycom="import log\nimport sys\nimport socket\nsys.path = ['/testFunc/','.']\nfrom moduleTest import *\nsocket1()\n";
+navigator.pyRun.PyCommand(pycom,onDataOut,onError);
+}
+function socket2(){
+var pycom="import log\nimport sys\nimport socket\nsys.path = ['/testFunc/','.']\nfrom moduleTest import *\nsocket2()\n";
+navigator.pyRun.PyCommand(pycom,onDataOut,onError);
+}
+
+
+
+function logTest(){
+var pycom="import log\nimport sys\nimport socket\nsys.path = ['/testFunc/','.']\nfrom moduleTest import *\nlogTest()\n";
+navigator.pyRun.PyCommand(pycom,onDataOut,onError);
+}*/
+
+
+
+function init_dev(){
+
+  
+  var pycom="import log\nimport sys\nsys.path = ['/pythonHome/Lib','/pythonHome','.']\nfrom SecApp.IOClass import AppIO as aio\n";
+  navigator.pyRun.PyCommand(pycom,onDataOut,onError);
+}
+
+
+
+function interactive(){
+
+var pycom=document.getElementById("textField1").value;
+document.getElementById("textField1").value="";
+navigator.pyRun.PyCommand(pycom,onDataOut,onError);
+}
+
+
+
+
+
+
+function onError() {
+      alert("error");
+}
+
+function onDataOut(text) {
+document.getElementById("textField2").value = text;
+//will be second wizard section after
+
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="center">
+
+
+       <br class="clearFloat" />
+        <a> Authenticaate to developer google drive account <a>
+            <a> database is only encrypted with your password and compressed <a>
+                <a> secondary Full AES encryption with randomized keyfile is still being integrated<a>
+
+
+
+
+<input id="prompt" type="button" value="BIND IO" onclick="init_dev();" ></input>
+<form action="#" onsubmit="interactive();">
+<TEXTAREA id="textField1" style="width:400px;height:200px;overflow:visible" ></TEXTAREA>
+<input id="prompt" type="button" value="interactive prompt" onclick="interactive();" ></input>
+</form>
+<br>
+<br>
+
+
+
+<TEXTAREA id="textField2" style="width:400px;height:300px;overflow:visible" ></TEXTAREA>
+
+        
+</div>
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
+
+
+

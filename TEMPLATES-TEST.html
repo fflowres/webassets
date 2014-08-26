@@ -1,0 +1,39 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://app1.virtuhorizon.com/secuapp-templatesjs.php"></script> <!-- returns a list of json objects in variable named jsontemplates -->
+<script>
+var templatecounter=0;
+$(document).ready(function () {
+
+
+
+for(i=0,ii=jsontemplates.length; i<ii; i++){
+
+	var tempJSON=eval("(function(){return " + jsontemplates[i] + ";})()");
+
+
+
+var newTextBoxDiv = $(document.createElement('div'))
+    .attr({
+    "id":'template'+templatecounter,
+    "class" : "templateArea",
+    });
+
+newTextBoxDiv.after().html('<div class="templateData>'+tempJSON["title"]+'</div>'+ '<input type="button" onClick="trytemplate('+templatecounter+');" class="tryButton">Trial Question: '+tempJSON["title"]+' #</input><a>'+JSON.stringify(tempJSON["questions"])+'</a><br><br>');
+
+
+
+newTextBoxDiv.appendTo("#content_div");
+
+
+templatecounter++;
+}
+});
+
+function trytemplate(number){
+	var tempJSON=eval("(function(){return " + jsontemplates[number] + ";})()");
+	var tryjson = JSON.stringify(tempJSON["questions"]);
+	alert(tryjson);
+}
+</script>
+
+<div id="content_div" ><div>

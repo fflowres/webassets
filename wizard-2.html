@@ -1,0 +1,103 @@
+
+<html>
+    <head>
+      
+<link href="style/layout.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="js/kitchensink.js"></script>
+
+        <script type="text/javascript" src="js/jq.mobi.js"></script>     
+
+        <script type="text/javascript" src="js/api/accelerometer.js"></script>  
+
+<script type="text/javascript" src="js/wm.js"></script>
+
+
+
+<script type="text/javascript" charset="utf-8" src="js/pyRun.js"></script>
+
+
+
+
+        <style type="text/css">
+        .accel
+        {
+            width:10px;
+            height:30px;
+            background-color:red;
+        }
+
+        </style>
+
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+/*function authenticateCloud(){
+
+
+
+var pycom="import log\nimport sys\nsys.path = ['/pythonHome/Lib/site-packadges','/pythonHome/Lib','/pythonHome/system','/pythonHome','.']\nfrom syncHandle import *\ncloudAuthenticate()\nop='Cloud account authenticated'\nlog.CaptureStdout(op)\n";
+
+
+navigator.pyRun.PyCommand(pycom,onDataOut,onError);
+
+
+
+}*/
+function authenticateCloud(){
+
+
+
+var pycom="import log\nimport sys\nsys.path = ['/pythonHome/Lib/site-packadges','/pythonHome/Lib','/pythonHome/system','/pythonHome','.']\nfrom moduleTest import *\ntestall()\n";
+
+
+navigator.pyRun.PyCommand(pycom,onDataOut,onError);
+
+
+
+}
+
+
+function onError() {
+      alert("error");
+}
+
+function onDataOut(text) {
+sessionStorage.topage = 'questions.html';
+location.href = 'index_p.html';
+//will be second wizard section after
+
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="center">
+
+
+       <br class="clearFloat" />
+        <a> Authenticaate to developer google drive account <a>
+            <a> database is only encrypted with your password and compressed <a>
+                <a> secondary Full AES encryption with randomized keyfile is still being integrated<a>
+           <input id="Read" type="button" value="authenticate google" onclick="onDataOut();" ></input>
+    
+</div>
+</body>
+</html>
+
+
+

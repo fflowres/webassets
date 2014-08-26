@@ -1,0 +1,93 @@
+input[type="text"] {
+font-size: 150%;
+height: 150%;
+width: 90%;
+    
+}
+input[type="number"] {
+font-size: 150%;
+height: 150%;
+width: 43%;
+    
+}
+
+.wrapper {
+
+
+}
+#answer-container{
+/*    float:left; */
+  min-width:100px;
+
+  width:90%;
+  
+  min-height:50px;
+  height:100%;
+
+
+  background-color: darkgray;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+  border:0.5em solid white;
+  padding:10px;
+  margin: 0 auto;
+}
+#boxA-container, #boxB-container, #boxC-container{
+
+/*  float:left; */
+  min-width:100px;
+
+  width:90%;
+  
+  min-height:50px;
+  height:100%;
+
+
+ /* background-color: darkgray;*/
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+  border:0.5em solid white;
+  padding:10px;
+  margin: 0 auto;
+}
+
+.questionsBox{
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+  border:.5em solid #3D94F6;
+ padding:3%;
+}
+
+.answersBox{
+    -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+  border:0.5em solid #3D94F6;
+ padding:3%;
+}
+
+
+h2{ /*box heading text*/
+  color:#1570CD;
+}
+
+.questionData{/*IN Question boxes, question text*/
+  color:#1570CD;
+}
+.responseData{ /*IN Response boxes, question text*/
+  color:#1570CD;
+}
+
+h3{ /*Response boxes, question TYPE text*/
+  color:#1570CD;
+}
+
+.removeButton{
+  float:right;
+  height: 3em;
+
+
+}

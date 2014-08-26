@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+/*custom fonts*/
+@font-face {
+	font-family: myriadWebPro;
+	src: url('fonts/myriadWebPro.ttf');
+}
+
+
+
+html {
+	/*background-image: url(images/bg.jpg);*/
+	background-color: #fff;
+	background-repeat: repeat; 
+}
+/*------------------------- LOGIN CSS ------------------------- */
+
+
+body {
+	font-family:myriadWebPro;
+	/*color:#fff;*/ /*text color*/
+    
+}
+div.center {
+text-align:center;
+margin:0 auto;
+width:40%;
+} 
+
+
+/*------------------------- ^^subglobal for login CSS ------------------------- */
+
+
+
+
+
+#midForm {
+		padding:1px;
+
+	width:60%;
+text-decoration:none;
+
+	margin:0 auto;
+}
+
+
+
+
+
+#regBtn{
+text-decoration:none;
+	width:60%;
+	height:1em;
+		margin-top:20px;
+	margin-bottom:20px;
+	margin-left:auto;
+	margin-right:auto;
+
+}
+
+
+.regButton {
+	font-family:myriadWebPro;
+
+color:#fff;
+	display:block;
+	font-weight:bold;
+	font-size:36px;
+	line-height:36px;
+	position:relative;
+	text-decoration:none;
+	text-align:center;
+text-decoration:none;
+	line-height:1.2em;
+	padding:0px 0px;
+	margin-top:0px; margin-left:0px; 
+	text-overflow:ellipsis; 
+	width:100%;min-width:40px; height:50px;
+	background:url("images/loginButton.gif")
+}
+
+ /* This is the custom, graphical button shown in JQMobi by default */
+.loginButton:hover, .loginButton:focus { 
+background:url("images/loginButtonHover.gif");
+color:#ccc;
+ } 
+
+
+ 
+ /*Changes the  color of the input field while active. */
+/*-------------------------end TOP login css------------------------- */
+/*-------------------------Start Bottom login css------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------------end login css------------------------- */
+/*------------------------- All layout Generic styles ------------------------- */
+

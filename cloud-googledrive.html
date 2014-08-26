@@ -1,0 +1,121 @@
+
+<html>
+    <head>
+      
+        <script type="text/javascript" src="js/wm.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/pyRun.js"></script>
+        <script type="text/javascript" src="js/api/childbrowser.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/cloud/googledrive.js"></script>
+
+        <link href="../style/layout.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="js/jq.mobi.js"></script>     
+
+        <script type="text/javascript" charset="utf-8" src="js/jquery-2.1.1.min.js"></script>
+
+
+    <style type="text/css">
+
+            .cloudlogo
+        {
+            max-width:250px;
+            
+        }
+
+
+
+    </style>
+
+
+
+<script>
+
+$( document ).ready(function() {
+setpagetype();
+
+});
+</script>
+
+
+
+
+</head>
+
+
+
+
+<body> <!-- load config -->
+
+
+
+
+
+
+
+
+
+
+
+<div class="center">
+
+
+       <br class="clearFloat" />
+        <a> GOOGLE DRIVE UPLOAD  <a>
+
+
+
+           <div>
+
+           <img class="cloudlogo" type="image" src="style/images/drive.png"></img>
+
+           </div>
+
+           <div>
+
+           <br><br><br>
+
+           <div id="account-p" style="display:block;">
+
+           <div>
+           <br><br><br>
+
+           <div id="database-info" style="display:none;">
+            <label>Database Name : </label><input type='textbox' id='dbnametextbox' ></input>
+            <label>Database Encryption key : </label><input type="password" id='dbpassword' ></input>
+          </div>
+
+           <div id="loading" style="display:none;"><img src="style/images/ajax-loader.gif" alt="" /></div>
+            <input id="cloud-action" type="button" value="undefined" onclick="cloudaction_handle();" ></input>
+           </div>
+
+           <div id="fail-msg" style="display:none;">
+            <label>Cloud sync failed: unknown error </label>>
+          </div>
+
+           <br><br><br>
+
+
+
+<input id="select-cloud" type="button" value="Select Cloud Provider" onClick="selectcloud_handle();" ></input>
+
+
+
+     </form>
+        
+</div>
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
+
+
+

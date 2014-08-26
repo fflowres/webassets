@@ -1,0 +1,79 @@
+<html>
+    <head>
+     <script type="text/javascript" charset="utf-8" src="js/wm.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/pyRun.js"></script>
+<link href="style/layout.css" rel="stylesheet" type="text/css" />
+    	<link href="style/layout.css" rel="stylesheet" type="text/css" />
+
+    	<body  onLoad="checkValidDB();">
+
+
+
+
+
+<script type="text/javascript">
+
+function checkValidDB(){
+var pycom="import log\nimport sys\nsys.path = ['/pythonHome/Lib','/pythonHome','.']\nfrom appLogicDef import *\ncheckexist()\n";
+navigator.pyRun.PyCommand(pycom,DBstatus,onError);
+}
+
+
+
+function onError() {
+      alert("error");
+}
+
+
+function DBstatus(text) {
+if (text=="True"){
+  location.href = 'index-pass.html';
+} else {
+  location.href = 'wizard-1.html';
+}
+
+/*alert("C++ >> '" + text);*/
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+<div class="app" id="wrapper">
+
+  <div class="onePage" id="topArea">
+<br class="clearFloat" />
+  		<div id="midForm" class="center">
+
+        	<div id="logo">
+       	 	<img src="style/images/ajax-loader.gif" max-width="42px" style="margin:0 auto";/>
+        	</div>
+          loading.......
+          checking integrity
+		 
+         <br class="clearFloat" />
+
+
+        </div>
+</div>
+
+ 
+</div>
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

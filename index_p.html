@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+ <!--  layout css/js fix. pod bar height restricts view of bottom buttons in content field -->
+  <!-- python hooks -->
+
+    <script type="text/javascript" charset="utf-8" src="js/wm.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/pyRun.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style/guilayout.css" />
+<script type="text/javascript" charset="utf-8" src="js/jquery-2.1.1.min.js"></script>
+<script src="js/device.js"></script><!--  handles general focusing on changing elements and general keystrokes -->
+
+<script type="text/javascript" charset="utf-8" src="js/jq.mobi.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/guibar.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/content-area.js"></script>
+
+
+
+<script src="js/questions-page.js"></script>
+	<link href="style/layout.css" rel="stylesheet">
+	<link href="style/form-pages.css" rel="stylesheet">
+	<link href="style/jquery-ui-1.css" rel="stylesheet">
+	<script src="js/custom-jquery.js"></script>
+	<script src="js/custom-jquery-ui.js"></script>
+	<script src="js/custom-jquery-punch.js"></script>
+
+
+
+
+
+
+
+
+<script src="js/answers-page.js"></script>
+
+
+
+
+
+
+<script src="js/graph-page.js"></script>
+	<link rel="stylesheet" href="amchartsstyle.css" type="text/css">
+	<script src="amcharts/amcharts.js" type="text/javascript"></script>
+	<script src="amcharts/serial.js" type="text/javascript"></script>
+
+<script type="text/javascript" charset="utf-8" src="js/settings-page.js"></script>
+
+<script type="text/javascript" charset="utf-8" src="js/cloud/cloud-index.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/cloud/ftp.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/cloud/dropbox.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/cloud/googledrive.js"></script>
+
+<script type="text/javascript" charset="utf-8" src="js/api/childbrowser.js"></script>
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+</head>
+
+<body onLoad="startPage();">
+
+
+
+<div id="topcolumn" class="content-area">
+
+	<img style="display:none;" src="style/images/ajax-loader.gif" alt="" />
+
+
+	<div id="questions-page" style="display:none;">
+		<!-- 	$( document ).ready(function() {
+		getJSONQuestions();
+		
+		}); -->
+
+
+
+		<div id="topmenu" class="toppodbar">
+	<li id="save" type='button' class="toppodbtn" onClick="Getframequestions();"><img src="style/icons/valid.png"/><a>Save</a></li>
+	<li id="new" type='button' class="toppodbtn" onClick="New();"><img src="style/icons/add.png"/><a>New</a></li>
+		<li id="template" type='button' class="toppodbtn" onClick="Getframequestions();"><img src="style/icons/cloud_download.png"/><a>Templates</a></li>
+
+		</div>
+
+
+<!-- 		<div id="questions-floater">
+			<input type='button' value='new Question' id='getButtonValue' onClick="New();"></input>
+			<input type='button' value='Save Questions' id='saveQ2' onClick="Getframequestions();"></input>
+		</div> -->
+
+<br>
+<br>
+		<div id="boxA-container">
+		  
+		     <h2>Your Questions:</h2>
+		
+		    <div id="boxA" class='questionsBox'>
+		
+		    </div>
+		
+		</div>
+		
+		<div id="boxB-container">
+		     <h2>Trash:</h2>
+		     
+		    <div id="boxB" class='questionsBox'>
+		
+		    </div>
+		
+		</div>
+		
+		<div style="clear:both;"></div>
+	
+	</div>
+
+
+
+
+
+	<div id="answers-page" style="display:none;">
+	
+			<!-- $( document ).ready(function() {
+			chainload_questions_json();
+			
+			}); -->
+
+					<div id="topmenu" class="toppodbar">
+	<li id="save" type='button' class="toppodbtn" onClick="Getframeresponses();"><img src="style/icons/valid.png"/><a>Save</a></li>
+		</div>
+
+
+
+<!-- 			<div id="response-floater">
+				<input type='button' value='Save Answers' id='saveQ2' onClick="Getframeresponses();"></input>
+			</div> -->
+
+			<div id="boxC-container">
+			
+			     <h2>Your responses:</h2>
+			
+			    <div id="boxC" class='answersBox'>
+			
+			
+			    </div>
+			
+			</div>   
+			
+	
+	</div>
+
+
+
+	<div id="graph-page" style="display:none;">
+		<!-- $( document ).ready(function() {
+		var minuspodbarsize = $(window).height() * 0.85;
+		var obj5 = $(".graph-area");
+		$(obj5).css({height: minuspodbarsize });
+		
+		
+		getDataMatrix();
+		
+		}); -->
+
+		<div id="topmenu" class="toppodbar">
+			<li id="analyze" type='button' class="toppodbtn" onClick="analyzeDataMatrix();"><img src="style/icons/valid.png"/><a>analyze</a></li>
+		</div>
+
+		<div id="headline"><span>Graph Your Results!</span></div>                
+		  <!-- Load your app script here. -->
+		<div  id="wrapper">
+		<div id="chartdiv" class="graph-area" style="background-color:#ffffff; width: 100%; height: 600px;"></div>
+		</div>
+	
+	</div>
+
+
+
+
+	<div id="settings-page" style="display:none;">
+
+		<div id="settingsmenu" class="toppodbar">
+
+	<li id="logout" type='button' class="toppodbtn" onClick=";"><img src="style/icons/valid.png"/><a>Logout</a></li>
+
+	<li id="import" type='button' class="toppodbtn" onClick=";"><img src="style/icons/cloud_download.png"/><a>Import</a></li>
+
+	<li id="deleteall" type='button' class="toppodbtn" onClick="eraseALL();"><img src="style/icons/cross.png"/><a>Delete EVERYTHING</a></li>
+		</div>
+
+<br>
+<br>
+	
+		<div class="center" >
+		<br class="clearFloat" />
+		<h2> Settings  </h2>
+
+		<h3>- Change encryption key </h3>
+		<h3>- Enter app license (removes ads) </h3>
+		<h3>- Credits: </h3>
+		<h3>-- Made with Marmalade C++ SDK </h3>
+		<h3>-- AmCharts </h3>
+		<h3>-- AmCharts </h3>
+		<h3>- Disclaimer: </h3>
+		<h3>-- This software contains: </h3>
+		<h3>-- AES-256 bit encryption</h3>
+		<h3>-- Salsa20 encryption</h3>
+		<h3>-- RSA asymetric key cypher</h3>
+		<h3>-- SSL/TLS Schemas</h3>
+		<h3>-- Accelerometer + Magnetometer + Clockgitter Entropy generation</h3>
+		<h3>---- Due to US Crypto Export laws, this software may not be legal in your country. </h3>
+
+
+		<a href="developerConsole.html">DEVELOPER CONSOLE</a>
+		 
+		</div>
+	
+	</div>
+
+
+
+<div id="cloudselect-page" style="display:none;">
+
+<!-- $( document ).ready(function() {
+getlocation();
+
+}); -->
+
+<div class="center">
+
+<a> Cloud Sync  </a>
+
+
+
+<input id="dropbox" class="cloudlogo" type="image" src="style/images/dropbox.png" onclick="cloudpage_dropbox();"></input>
+
+<input id="ftp" class="cloudlogo" type="image" src="style/images/filezilla.png" onclick="cloudpage_ftp();"></input>
+
+<input id="googledrive" class="cloudlogo" type="image" src="style/images/drive.png" onclick="cloudpage_googledrive();"></input>
+
+
+</div>
+</div>
+
+
+<div id="clouddropbox-page" style="display:none;">
+
+
+<div class="center">
+
+
+       <br class="clearFloat" />
+        <a> DROPBOX UPLOAD  <a>
+
+
+
+           <div><img class="cloudlogo" type="image" src="style/images/dropbox.png"></img></div>
+
+           <div> <!-- main -->
+           <input id="Authenticate" type="button" value="Get Authorization code" onClick="authenticate_dropbox();" ></input>
+           <label>Dropbox Authorization Code: </label><input type='textbox' id='authcode' ></input>
+           <br><br><br>
+           <input id="cloud-action" type="button" value="Upload" onClick="upload_db_dropbox();" ></input>
+
+
+
+
+
+           <div id="database-info" style="display:none;">
+            <label>Database Name : </label><input type='textbox' id='dbnametextbox' ></input>
+            <label>Database Encryption key : </label><input type="password" id='dbpassword' ></input>
+          </div>
+
+           <div id="loading" style="display:none;"><img src="style/images/ajax-loader.gif" alt="" /></div>
+
+
+           </div> <!-- close main -->
+
+           <div id="fail-msg" style="display:none;">
+            <label>Cloud sync failed: unknown error </label>>
+          </div>
+
+           <br><br><br>
+
+
+
+
+<input id="select-cloud" type="button" value="Select Cloud Provider" onClick="cloudpage_select();" ></input>
+</div>
+
+</div>
+
+
+
+
+
+<div id="cloudgoogledrive-page" style="display:none;">
+
+
+<div class="center">
+
+
+       <br class="clearFloat" />
+        <a> GOOGLE DRIVE UPLOAD  <a>
+
+
+
+           <div><img class="cloudlogo" type="image" src="style/images/drive.png"></img></div>
+
+           <div> <!-- main -->
+           <input id="Authenticate" type="button" value="Get Authorization code" onClick="authenticate_googledrive();" ></input>
+           <label>Dropbox Authorization Code: </label><input type='textbox' id='authcode' ></input>
+           <br><br><br>
+           <input id="cloud-action" type="button" value="Upload" onClick="upload_db_dropbox();" ></input>
+
+
+
+
+
+           <div id="database-info" style="display:none;">
+            <label>Database Name : </label><input type='textbox' id='dbnametextbox' ></input>
+            <label>Database Encryption key : </label><input type="password" id='dbpassword' ></input>
+          </div>
+
+           <div id="loading" style="display:none;"><img src="style/images/ajax-loader.gif" alt="" /></div>
+
+
+           </div> <!-- close main -->
+
+           <div id="fail-msg" style="display:none;">
+            <label>Cloud sync failed: unknown error </label>>
+          </div>
+
+           <br><br><br>
+
+
+
+
+<input id="select-cloud" type="button" value="Select Cloud Provider" onClick="cloudpage_select();" ></input>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+<div id="cloudftp-page" style="display:none;">
+
+
+<div class="center">
+
+
+       <br class="clearFloat" />
+        <a> CUSTOM FTP UPLOAD  <a>
+
+
+
+           <div>
+
+           <img class="cloudlogo" type="image" src="style/images/filezilla.png"></img>
+
+           </div>
+
+           <div>
+           <label>Hostname : </label><input type='textbox' id='textbox1' ></input>
+           <br><br><br>
+           <label>Username: </label><input type='textbox' id='textbox2' ></input>
+           <br><br><br>
+
+           <div id="account-p" style="display:block;">
+           <label>Account Password (not stored): </label><input type="password" id='cloudpass' ></input>
+           <div>
+           <br><br><br>
+
+           <div id="database-info" style="display:none;">
+            <label>Database Name : </label><input type='textbox' id='dbnametextbox' ></input>
+            <label>Database Encryption key : </label><input type="password" id='dbpassword' ></input>
+          </div>
+
+           <div id="loading" style="display:none;"><img src="style/images/ajax-loader.gif" alt="" /></div>
+            <input id="cloud-action" type="button" value="undefined" onclick="cloudaction_handle();" ></input>
+           </div>
+
+           <div id="fail-msg" style="display:none;">
+            <label>Cloud sync failed: unknown error </label>>
+          </div>
+
+           <br><br><br>
+
+
+
+<input id="select-cloud" type="button" value="Select Cloud Provider" onClick="cloudpage_select();" ></input>
+
+
+
+     </div>
+        
+</div>
+
+
+
+</div>
+
+
+
+
+
+</div> <!--  top column -->
+<!-- <div style="clear: left;"></div> -->
+
+
+
+<div id="bottomrow" class="podbar">
+
+	<li id="page1" class="podbtn"><img src="style/icons/Q.png"/><!-- <a>Questions</a> --></li>
+	<li id="page2" class="podbtn"><img src="style/icons/A.png"/><!-- <a>Answers</a> --></li>
+	<li id="page3" class="podbtn"><img src="style/icons/G.png"/><!-- <a>Graph</a> --></li>
+	<li id="page4" class="podbtn"><img src="style/icons/S.png"/><!-- <a>Console</a> --></li>
+	<li id="page5" class="podbtn"><img src="style/icons/U.png"/><!-- <a>Upload</a> --></li>
+
+</div>
+
+
+
+
+</body>
+
+</html>

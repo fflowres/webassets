@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script type="text/javascript" charset="utf-8" src="js/content-area.js"></script>
+    <title>Graph</title>
+    <!-- The Web Marmalade library must be loaded before any scripts
+	 that call its methods. To be safe, load it in the page head -->
+
+<link href="../style/layout.css" rel="stylesheet" type="text/css" />
+
+
+<script src="graph-page.js"></script>
+
+
+<link rel="stylesheet" href="amchartsstyle.css" type="text/css">
+            <script src="../amcharts/amcharts.js" type="text/javascript"></script>
+        <script src="../amcharts/serial.js" type="text/javascript"></script>
+
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery-2.1.1.min.js"></script>
+
+<script>
+
+$( document ).ready(function() {
+var minuspodbarsize = $(window).height() * 0.85;
+var obj5 = $(".graph-area");
+$(obj5).css({height: minuspodbarsize });
+
+
+getDataMatrix();
+
+});
+</script>
+</head>
+
+
+
+
+
+<body>
+  <div id="YourPageContainer">
+                <div id="headerx">                          
+                <div id="headline"><span>Graph Your Results!</span></div>                
+            </div>
+
+  </div>
+  <!-- Load your app script here. -->
+<div  id="wrapper">
+<div id="chartdiv" class="graph-area" style="background-color:#ffffff; width: 100%;"></div>
+</div>
+
+
+
+
+
+           
+
+
+
+</body>
+</html>
